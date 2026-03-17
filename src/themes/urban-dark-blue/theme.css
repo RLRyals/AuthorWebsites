@@ -1,0 +1,356 @@
+/* ==========================================================================
+   Theme: Urban Dark Blue — Top Nav Layout
+   Best for: Urban Fantasy, Cyberpunk, Crime Thriller, Dark Sci-Fi
+   Palette: Deep navy base, white text, gold accents
+   ========================================================================== */
+:root {
+    /* Deep navy base with gold accent */
+    --color-bg: #0a0f1a;
+    --color-text: #c8cdd8;
+    --color-text-muted: rgba(200, 205, 216, 0.55);
+    --color-heading: #f0f2f8;
+    --color-accent: #d4a843;
+    --color-highlight: #f0d060;
+    --color-nav: #6b7088;
+    --color-border: rgba(255, 255, 255, 0.06);
+    --color-accent-glow: rgba(212, 168, 67, 0.2);
+
+    --font-body: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --font-heading: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --line-height: 1.7;
+
+    --content-width: 1080px;
+    --nav-align: center;
+    --nav-transform: uppercase;
+
+    --book-border: none;
+    --book-radius: 8px;
+    --book-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+    --book-hover-shadow: 0 24px 64px rgba(212, 168, 67, 0.12), 0 0 0 1px rgba(212, 168, 67, 0.1);
+    --button-radius: 8px;
+}
+
+/* ==========================================================================
+   BACKGROUND — layered ambient gradients
+   ========================================================================== */
+body {
+    background: var(--color-bg);
+}
+
+/* ==========================================================================
+   TOP NAV HEADER
+   ========================================================================== */
+.site-header {
+    border-bottom-color: transparent;
+    border-image: linear-gradient(90deg, var(--color-accent), rgba(212, 168, 67, 0.2), transparent) 1;
+}
+
+.header-brand a {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #f0f2f8 40%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-link {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+.nav-active {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
+.main-content {
+    min-height: 100vh;
+    padding: 3rem 0;
+    background:
+        radial-gradient(ellipse 50% 35% at 80% 0%, rgba(212, 168, 67, 0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 10% 100%, rgba(30, 60, 120, 0.06) 0%, transparent 50%),
+        var(--color-bg);
+}
+
+/* Subtle grain texture */
+.main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+.main-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #f0f2f8 20%, var(--color-accent) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--color-heading);
+}
+
+h3 { font-size: 1.25rem; }
+
+p {
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.text-section h2 {
+    color: var(--color-heading);
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Accent bar on section headings */
+.text-section h2::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
+    margin-bottom: 1rem;
+    border-radius: 1px;
+}
+
+.text-section p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   HERO / HOME CONTAINER
+   ========================================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    gap: 3rem;
+}
+
+@media (min-width: 900px) {
+    .container {
+        flex-direction: row;
+        text-align: left;
+        gap: 5rem;
+        align-items: center;
+    }
+
+    .text-section {
+        flex: 1;
+    }
+
+    .book-image {
+        flex: 0 0 auto;
+        max-width: 320px;
+    }
+
+    .text-section h2::before {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 899px) {
+    .text-section h2::before {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ==========================================================================
+   BOOK COVERS — gold glow + lift on hover
+   ========================================================================== */
+.book-image {
+    position: relative;
+}
+
+.book-image img {
+    border: none;
+    border-radius: var(--book-radius);
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.book-image a:hover img {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Ambient gold glow behind covers */
+.book-image::before {
+    content: '';
+    position: absolute;
+    inset: 15% 10%;
+    background: radial-gradient(ellipse, rgba(212, 168, 67, 0.12) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 0.6;
+}
+
+.book-image:hover::before {
+    opacity: 1;
+}
+
+/* CTA Button */
+.book-image::after {
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2.5rem;
+    border-radius: var(--button-radius);
+    box-shadow: 0 4px 20px rgba(212, 168, 67, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-image:hover::after {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(212, 168, 67, 0.25);
+}
+
+/* Books page covers */
+main img[alt*="Cover"] {
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+main img[alt*="Cover"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(212, 168, 67, 0.12);
+}
+
+/* ==========================================================================
+   INTRO SECTION
+   ========================================================================== */
+.intro {
+    max-width: 600px;
+    margin: 3rem 0;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.intro p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   BLOG LIST — subtle hover cards
+   ========================================================================== */
+.blog-list li,
+main ul li {
+    margin-bottom: 0.25rem;
+}
+
+.blog-list a,
+main ul a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.blog-list a:hover,
+main ul a:hover {
+    background: rgba(212, 168, 67, 0.05);
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   BOOK PAGE headings
+   ========================================================================== */
+main > h2 {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+a {
+    transition: color 0.25s ease;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    border-top-color: transparent;
+    border-image: linear-gradient(90deg, transparent, rgba(212, 168, 67, 0.15), transparent) 1;
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(212, 168, 67, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(212, 168, 67, 0.2);
+}
+
+html {
+    scrollbar-color: rgba(212, 168, 67, 0.1) var(--color-bg);
+    scrollbar-width: thin;
+}
+
+/* ==========================================================================
+   SELECTION
+   ========================================================================== */
+::selection {
+    background: rgba(212, 168, 67, 0.25);
+    color: #f0f2f8;
+}

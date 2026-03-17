@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 600" width="280" height="600">
+  <!-- Warm background wash -->
+  <rect width="280" height="600" fill="#f5ebe0"/>
+
+  <!-- Bookshelf 1 -->
+  <rect x="20" y="320" width="240" height="8" rx="2" fill="#a0522d" opacity="0.6"/>
+  <!-- Books on shelf 1 -->
+  <rect x="30" y="270" width="18" height="50" rx="2" fill="#c9314b" opacity="0.5"/>
+  <rect x="52" y="280" width="14" height="40" rx="2" fill="#8b4513" opacity="0.5"/>
+  <rect x="70" y="275" width="20" height="45" rx="2" fill="#d4956a" opacity="0.5"/>
+  <rect x="94" y="282" width="12" height="38" rx="2" fill="#6b8e23" opacity="0.4"/>
+  <rect x="110" y="272" width="16" height="48" rx="2" fill="#c2724e" opacity="0.5"/>
+  <rect x="130" y="278" width="22" height="42" rx="2" fill="#8b6914" opacity="0.45"/>
+  <rect x="156" y="274" width="14" height="46" rx="2" fill="#b22222" opacity="0.4"/>
+  <rect x="174" y="285" width="18" height="35" rx="2" fill="#d4956a" opacity="0.5"/>
+  <rect x="196" y="270" width="15" height="50" rx="2" fill="#556b2f" opacity="0.4"/>
+  <rect x="215" y="280" width="20" height="40" rx="2" fill="#8b4513" opacity="0.45"/>
+
+  <!-- Bookshelf 2 -->
+  <rect x="20" y="420" width="240" height="8" rx="2" fill="#a0522d" opacity="0.5"/>
+  <!-- Books on shelf 2 -->
+  <rect x="35" y="375" width="20" height="45" rx="2" fill="#d4956a" opacity="0.4"/>
+  <rect x="59" y="380" width="16" height="40" rx="2" fill="#8b0000" opacity="0.35"/>
+  <rect x="79" y="372" width="14" height="48" rx="2" fill="#c2724e" opacity="0.4"/>
+  <rect x="97" y="378" width="22" height="42" rx="2" fill="#6b8e23" opacity="0.35"/>
+  <rect x="123" y="382" width="12" height="38" rx="2" fill="#8b6914" opacity="0.4"/>
+  <rect x="139" y="370" width="18" height="50" rx="2" fill="#a0522d" opacity="0.4"/>
+  <rect x="161" y="380" width="15" height="40" rx="2" fill="#b22222" opacity="0.35"/>
+  <rect x="180" y="374" width="20" height="46" rx="2" fill="#556b2f" opacity="0.4"/>
+  <rect x="204" y="382" width="16" height="38" rx="2" fill="#d4956a" opacity="0.35"/>
+
+  <!-- Teacup -->
+  <ellipse cx="140" cy="500" rx="28" ry="8" fill="#a0522d" opacity="0.3"/>
+  <path d="M112,500 Q112,475 118,468 L162,468 Q168,475 168,500 Z" fill="#f0e0cc" opacity="0.5" stroke="#a0522d" stroke-width="1" stroke-opacity="0.3"/>
+  <ellipse cx="140" cy="468" rx="22" ry="6" fill="#e8d5c0" opacity="0.5"/>
+  <!-- Tea inside -->
+  <ellipse cx="140" cy="470" rx="18" ry="4" fill="#c2724e" opacity="0.3"/>
+  <!-- Cup handle -->
+  <path d="M168,478 Q185,478 185,490 Q185,502 168,500" fill="none" stroke="#a0522d" stroke-width="2" stroke-opacity="0.35"/>
+  <!-- Steam wisps -->
+  <path d="M130,460 Q128,448 132,438" fill="none" stroke="#a0522d" stroke-width="1.5" stroke-opacity="0.2" stroke-linecap="round"/>
+  <path d="M140,458 Q142,444 138,434" fill="none" stroke="#a0522d" stroke-width="1.5" stroke-opacity="0.15" stroke-linecap="round"/>
+  <path d="M150,460 Q152,446 148,436" fill="none" stroke="#a0522d" stroke-width="1.5" stroke-opacity="0.2" stroke-linecap="round"/>
+
+  <!-- Decorative leaf sprigs -->
+  <g opacity="0.2" transform="translate(40, 540)">
+    <path d="M0,0 Q10,-15 25,-10" fill="#6b8e23" stroke="none"/>
+    <path d="M0,0 Q15,-5 28,-18" fill="#556b2f" stroke="none"/>
+    <line x1="0" y1="0" x2="30" y2="-14" stroke="#3d2b1f" stroke-width="0.5"/>
+  </g>
+  <g opacity="0.2" transform="translate(190, 550) scale(-1,1)">
+    <path d="M0,0 Q10,-15 25,-10" fill="#6b8e23" stroke="none"/>
+    <path d="M0,0 Q15,-5 28,-18" fill="#556b2f" stroke="none"/>
+    <line x1="0" y1="0" x2="30" y2="-14" stroke="#3d2b1f" stroke-width="0.5"/>
+  </g>
+</svg>

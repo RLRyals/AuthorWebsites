@@ -1,0 +1,25 @@
+{
+  "books": [
+    {
+      "name": "Ritual Echoes",
+      "series": "Neon Rites",
+      "image": "/images/rodthunderen/books/ritual_echoes_cover.svg",
+      "link": "",
+      "description": "When Detective Kael Voss is called to a murder scene sealed by wards that haven't been cast in centuries, he's pulled into a conspiracy that threads through the city's occult underground. The victim is his mother. The magic is someone else's."
+    },
+    {
+      "name": "Shadow Circuit",
+      "series": "Neon Rites",
+      "image": "/images/rodthunderen/books/shadow_circuit_cover.svg",
+      "link": "",
+      "description": "A dead hacker. A spell etched into source code. Kael follows the trail into the Grid — the city's hidden magical network — where data and sorcery merge, and someone is rewriting the rules of both."
+    },
+    {
+      "name": "Venom Ward",
+      "series": "Neon Rites",
+      "image": "/images/rodthunderen/books/venom_ward_cover.svg",
+      "link": "",
+      "description": "The wards protecting the city are failing, and the poison seeping through carries a familiar signature. Kael must confront the architect behind it all — even if the truth destroys the fragile peace he's built."
+    }
+  ]
+}

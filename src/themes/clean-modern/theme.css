@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Theme: Clean Modern
+   Best for: Contemporary Fiction, Romance, Women's Fiction, Literary Fiction
+   ========================================================================== */
+:root {
+    /* Colors */
+    --color-bg: #1a0a2e;
+    --color-text: #f0e6ff;
+    --color-text-muted: rgba(240, 230, 255, 0.7);
+    --color-heading: #d4a0ff;
+    --color-accent: #d4a0ff;
+    --color-highlight: #ff6ec7;
+    --color-nav: #d4a0ff;
+    --color-border: rgba(212, 160, 255, 0.2);
+    --color-accent-glow: rgba(212, 160, 255, 0.4);
+
+    /* Typography */
+    --font-body: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    --font-heading: 'Georgia', 'Palatino', serif;
+    --line-height: 1.7;
+
+    /* Layout */
+    --content-width: 1000px;
+    --nav-align: center;
+    --nav-transform: none;
+
+    /* Components */
+    --book-border: 2px solid rgba(212, 160, 255, 0.3);
+    --book-radius: 8px;
+    --book-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 160, 255, 0.08);
+    --book-hover-shadow: 0 10px 40px rgba(212, 160, 255, 0.3);
+    --button-radius: 20px;
+}

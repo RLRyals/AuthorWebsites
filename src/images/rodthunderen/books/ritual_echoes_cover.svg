@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600" width="400" height="600">
+  <defs>
+    <linearGradient id="bg1" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0b0e14"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="55%" r="40%">
+      <stop offset="0%" stop-color="rgba(123,94,167,0.25)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="pentGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(196,59,92,0.3)"/>
+      <stop offset="70%" stop-color="rgba(123,94,167,0.1)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="600" fill="url(#bg1)"/>
+  <rect width="400" height="600" fill="url(#glow1)"/>
+  <!-- Subtle border -->
+  <rect x="12" y="12" width="376" height="576" rx="4" fill="none" stroke="rgba(61,216,197,0.12)" stroke-width="1"/>
+  <!-- Series label -->
+  <text x="200" y="80" text-anchor="middle" fill="rgba(167,139,219,0.7)" font-family="Georgia, serif" font-size="11" letter-spacing="5" text-transform="uppercase">NEON RITES</text>
+  <!-- Title -->
+  <text x="200" y="150" text-anchor="middle" fill="#eef0f6" font-family="Georgia, serif" font-size="42" font-weight="bold" letter-spacing="3">RITUAL</text>
+  <text x="200" y="200" text-anchor="middle" fill="#eef0f6" font-family="Georgia, serif" font-size="42" font-weight="bold" letter-spacing="3">ECHOES</text>
+  <!-- Tagline -->
+  <text x="200" y="240" text-anchor="middle" fill="rgba(184,188,200,0.5)" font-family="Georgia, serif" font-size="13" font-style="italic">Her mother's murder. Someone else's hands.</text>
+  <!-- Pentacle glow -->
+  <circle cx="200" cy="340" r="70" fill="url(#pentGlow)"/>
+  <!-- Pentacle circle -->
+  <circle cx="200" cy="340" r="55" fill="none" stroke="rgba(196,59,92,0.5)" stroke-width="1.5"/>
+  <circle cx="200" cy="340" r="60" fill="none" stroke="rgba(123,94,167,0.2)" stroke-width="1"/>
+  <!-- Star -->
+  <polygon points="200,285 212,325 255,325 220,348 232,388 200,365 168,388 180,348 145,325 188,325" fill="none" stroke="rgba(61,216,197,0.35)" stroke-width="1.5" stroke-linejoin="round"/>
+  <!-- Author -->
+  <text x="200" y="480" text-anchor="middle" fill="rgba(61,216,197,0.8)" font-family="Georgia, serif" font-size="14" letter-spacing="4">ROD THUNDEREN</text>
+  <!-- Book number -->
+  <rect x="290" y="25" width="85" height="28" rx="3" fill="rgba(61,216,197,0.15)" stroke="rgba(61,216,197,0.3)" stroke-width="1"/>
+  <text x="332" y="44" text-anchor="middle" fill="rgba(61,216,197,0.9)" font-family="Arial, sans-serif" font-size="10" letter-spacing="2">BOOK ONE</text>
+</svg>

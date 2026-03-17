@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Author Overrides: Jane Doe
+   Theme: clean-modern | Genre: Cozy Mystery
+   Add any author-specific style tweaks here.
+   ========================================================================== */
+:root {
+    --bg-image: url('/images/janedoe-bg.jpg');
+    --color-bg: #faf6f0;
+    --color-text: #3d2b1f;
+    --color-text-muted: rgba(61, 43, 31, 0.6);
+    --color-heading: #8b4513;
+    --color-accent: #c2724e;
+    --color-highlight: #d4956a;
+    --color-nav: #8b4513;
+    --color-border: rgba(139, 69, 19, 0.2);
+    --color-accent-glow: rgba(194, 114, 78, 0.3);
+    --font-heading: 'Georgia', 'Palatino', serif;
+    --sidebar-image: url('/images/janedoe/sidebar-bg.svg');
+}

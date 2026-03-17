@@ -1,0 +1,8 @@
+/* ==========================================================================
+   Author Overrides: John Smith
+   Theme: sci-fi-tech
+   Add any author-specific style tweaks here.
+   ========================================================================== */
+:root {
+    --bg-image: url('/images/johnsmith-bg.jpg');
+}

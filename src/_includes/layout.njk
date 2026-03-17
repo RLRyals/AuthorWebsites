@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ author.pageTitle }}{{ pageTitle }}</title>
+  <link rel="stylesheet" href="/css/theme.css"/>
+</head>
+<body class="layout-{{ author.siteLayout or 'topnav' }}{% if page.url == '/' %} home{% endif %}">
+
+  {% if author.siteLayout == "sidebar" %}
+  {# ========== SIDEBAR LAYOUT ========== #}
+  <div class="site-layout">
+    <aside class="sidebar{% if author.sidebarImage %} has-bg-image{% endif %}">
+      <div class="sidebar-brand">
+        <a href="/">{{ author.penName }}</a>
+      </div>
+      <nav>
+        {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+      </nav>
+      <div class="sidebar-footer">
+        <div class="sidebar-social">
+          {% if author.social.twitter %}<a href="{{ author.social.twitter }}">Twitter</a>{% endif %}
+          {% if author.social.facebook %}<a href="{{ author.social.facebook }}">Facebook</a>{% endif %}
+        </div>
+        <p>&copy; {{ site.now }} {{ author.penName }}</p>
+      </div>
+    </aside>
+    <main class="main-content">
+      {{ content | safe }}
+    </main>
+  </div>
+
+  {% else %}
+  {# ========== TOP NAV LAYOUT ========== #}
+  <div class="site-wrapper">
+    <header class="site-header">
+      <div class="header-brand">
+        <a href="/">{{ author.penName }}</a>
+      </div>
+      <nav>
+        {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+      </nav>
+    </header>
+    <main class="main-content">
+      {{ content | safe }}
+    </main>
+    <footer>
+      <p>&copy; {{ site.now }} {{ author.penName }}</p>
+    </footer>
+  </div>
+  {% endif %}
+
+</body>
+</html>

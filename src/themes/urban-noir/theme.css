@@ -1,0 +1,546 @@
+/* ==========================================================================
+   Theme: Urban Noir — Sidebar Layout
+   Best for: Urban Fantasy, Dark Fantasy, Thriller, Detective Fiction
+   ========================================================================== */
+:root {
+    /* Cool slate base with electric teal accent */
+    --color-bg: #0b0e14;
+    --color-text: #b8bcc8;
+    --color-text-muted: rgba(184, 188, 200, 0.55);
+    --color-heading: #eef0f6;
+    --color-accent: #3dd8c5;
+    --color-highlight: #7b6cf6;
+    --color-nav: #5c6070;
+    --color-border: rgba(255, 255, 255, 0.05);
+    --color-accent-glow: rgba(61, 216, 197, 0.2);
+    --sidebar-width: 260px;
+    --sidebar-bg: rgba(8, 10, 16, 0.95);
+
+    --font-body: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --font-heading: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --line-height: 1.7;
+
+    --content-width: 1080px;
+    --nav-align: center;
+    --nav-transform: uppercase;
+
+    --book-border: none;
+    --book-radius: 8px;
+    --book-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.03);
+    --book-hover-shadow: 0 24px 64px rgba(61, 216, 197, 0.12), 0 0 0 1px rgba(61, 216, 197, 0.1);
+    --button-radius: 8px;
+}
+
+/* ==========================================================================
+   BACKGROUND — layered ambient gradients
+   ========================================================================== */
+body {
+    background: var(--color-bg);
+}
+
+/* ==========================================================================
+   SITE LAYOUT — sidebar + main content
+   ========================================================================== */
+.site-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   SIDEBAR — frosted glass with gradient accent line
+   ========================================================================== */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem 0;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+/* Gradient accent line on right edge */
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--color-accent) 30%,
+        var(--color-highlight) 70%,
+        transparent 100%
+    );
+    opacity: 0.4;
+}
+
+/* Author name / brand */
+.sidebar-brand {
+    padding: 0 1.75rem 2rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-brand a {
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-heading);
+    text-decoration: none;
+    background: linear-gradient(135deg, #eef0f6 40%, var(--color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Vertical nav */
+.sidebar nav {
+    flex: 1;
+    padding: 0.5rem 0;
+}
+
+.sidebar .nav-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: 2px;
+    list-style: none;
+}
+
+.sidebar .nav-item {
+    display: block;
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: 0.65rem 1.75rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-nav);
+    text-decoration: none;
+    border-bottom: none;
+    border-left: 2px solid transparent;
+    transition: color 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.02);
+    border-left-color: rgba(61, 216, 197, 0.3);
+    border-bottom: none;
+}
+
+.sidebar .nav-active {
+    border-bottom: none;
+}
+
+.sidebar .nav-active .nav-link,
+.sidebar .nav-link.nav-active,
+.sidebar li.nav-active .nav-link,
+.sidebar li.nav-active a {
+    color: var(--color-accent);
+    border-left-color: var(--color-accent);
+    background: linear-gradient(90deg, rgba(61, 216, 197, 0.06) 0%, transparent 100%);
+    font-weight: 600;
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+    padding: 1.25rem 1.75rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: auto;
+}
+
+.sidebar-social {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.sidebar-social a {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-nav);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.sidebar-social a:hover {
+    color: var(--color-accent);
+}
+
+.sidebar-footer p {
+    font-size: 0.62rem;
+    color: rgba(184, 188, 200, 0.3);
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA
+   ========================================================================== */
+.main-content {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    min-height: 100vh;
+    padding: 3rem 4rem;
+    background:
+        radial-gradient(ellipse 50% 35% at 80% 0%, rgba(61, 216, 197, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 10% 100%, rgba(123, 108, 246, 0.03) 0%, transparent 50%),
+        var(--color-bg);
+}
+
+/* Subtle grain texture */
+.main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+.main-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3 {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #eef0f6 20%, var(--color-accent) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: var(--color-heading);
+}
+
+h3 { font-size: 1.25rem; }
+
+p {
+    color: var(--color-text);
+    font-weight: 400;
+}
+
+.text-section h2 {
+    color: var(--color-heading);
+    font-size: 1.75rem;
+    margin-bottom: 1.25rem;
+}
+
+/* Accent bar on section headings */
+.text-section h2::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-highlight));
+    margin-bottom: 1rem;
+    border-radius: 1px;
+}
+
+.text-section p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   HERO / HOME CONTAINER
+   ========================================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    gap: 3rem;
+}
+
+@media (min-width: 900px) {
+    .container {
+        flex-direction: row;
+        text-align: left;
+        gap: 5rem;
+        align-items: center;
+    }
+
+    .text-section {
+        flex: 1;
+    }
+
+    .book-image {
+        flex: 0 0 auto;
+        max-width: 320px;
+    }
+
+    .text-section h2::before {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 899px) {
+    .text-section h2::before {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ==========================================================================
+   BOOK COVERS — glow + lift on hover
+   ========================================================================== */
+.book-image {
+    position: relative;
+}
+
+.book-image img {
+    border: none;
+    border-radius: var(--book-radius);
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.book-image a:hover img {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Ambient glow behind covers */
+.book-image::before {
+    content: '';
+    position: absolute;
+    inset: 15% 10%;
+    background: radial-gradient(ellipse, rgba(61, 216, 197, 0.12) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 0.6;
+}
+
+.book-image:hover::before {
+    opacity: 1;
+}
+
+/* CTA Button */
+.book-image::after {
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 2.5rem;
+    border-radius: var(--button-radius);
+    box-shadow: 0 4px 20px rgba(61, 216, 197, 0.15);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-image:hover::after {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(61, 216, 197, 0.25);
+}
+
+/* Books page covers */
+main img[alt*="Cover"] {
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+main img[alt*="Cover"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(61, 216, 197, 0.12);
+}
+
+/* ==========================================================================
+   INTRO SECTION
+   ========================================================================== */
+.intro {
+    max-width: 600px;
+    margin: 3rem 0;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.intro p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   BLOG LIST — subtle hover cards
+   ========================================================================== */
+.blog-list li,
+main ul li {
+    margin-bottom: 0.25rem;
+}
+
+.blog-list a,
+main ul a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.blog-list a:hover,
+main ul a:hover {
+    background: rgba(61, 216, 197, 0.05);
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   BOOK PAGE headings
+   ========================================================================== */
+main > h2 {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+/* ==========================================================================
+   FOOTER (hidden when sidebar layout is active)
+   ========================================================================== */
+.layout-sidebar footer {
+    display: none;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+a {
+    transition: color 0.25s ease;
+}
+
+/* ==========================================================================
+   MOBILE — collapse sidebar to top bar
+   ========================================================================== */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 0px;
+    }
+
+    .site-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 1rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .sidebar::after {
+        display: none;
+    }
+
+    .sidebar-brand {
+        padding: 0 1rem 0 0;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .sidebar .nav-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .sidebar .nav-link {
+        border-left: none;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.68rem;
+    }
+
+    .sidebar .nav-link:hover {
+        border-left: none;
+    }
+
+    .sidebar li.nav-active .nav-link,
+    .sidebar li.nav-active a {
+        border-left: none;
+        background: rgba(61, 216, 197, 0.08);
+        border-radius: 4px;
+    }
+
+    .sidebar-footer {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 2rem 1.5rem;
+    }
+
+    .main-content::before {
+        left: 0;
+    }
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(61, 216, 197, 0.1);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(61, 216, 197, 0.2);
+}
+
+html {
+    scrollbar-color: rgba(61, 216, 197, 0.1) var(--color-bg);
+    scrollbar-width: thin;
+}
+
+/* ==========================================================================
+   SELECTION
+   ========================================================================== */
+::selection {
+    background: rgba(61, 216, 197, 0.25);
+    color: #eef0f6;
+}

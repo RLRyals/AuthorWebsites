@@ -1,0 +1,17 @@
+{
+  "Rod Thunderen": {
+    "siteName": "rodthunderen",
+    "siteId": "",
+    "customDomain": "rodthunderen.com"
+  },
+  "Jane Doe": {
+    "siteName": "janedoe-author",
+    "siteId": "",
+    "customDomain": "janedoe.com"
+  },
+  "John Smith": {
+    "siteName": "johnsmith-author",
+    "siteId": "",
+    "customDomain": "johnsmith.com"
+  }
+}

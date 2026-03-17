@@ -1,0 +1,39 @@
+{
+  "name": "authorwebsite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "generate-cms": "node scripts/generate-cms-config.js",
+    "start": "node scripts/generate-cms-config.js && node scripts/serve-site.js",
+    "build": "node scripts/generate-cms-config.js && node scripts/build-site.js",
+    "build:all": "node scripts/generate-cms-config.js && node scripts/build-all-sites.js",
+    "deploy:s3": "node scripts/deploy-to-s3.js",
+    "deploy:netlify": "node scripts/deploy-to-netlify.js",
+    "deploy:all": "npm run build:all && node scripts/deploy-to-s3.js",
+    "deploy:all:netlify": "npm run build:all && node scripts/deploy-to-netlify.js",
+    "admin": "node scripts/generate-cms-config.js && npx decap-server",
+    "postinstall": "node scripts/install-hooks.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "luxon": "^3.5.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "eslint": "^9.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RLRyals/AuthorWebsites.git"
+  },
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RLRyals/AuthorWebsites/issues"
+  },
+  "homepage": "https://github.com/RLRyals/AuthorWebsites#readme"
+}

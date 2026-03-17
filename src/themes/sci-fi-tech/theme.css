@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Theme: Sci-Fi Tech
+   Best for: Science Fiction, Cyberpunk, Dystopian, Techno-Thriller
+   ========================================================================== */
+:root {
+    /* Colors */
+    --color-bg: #0a0a0f;
+    --color-text: #d0d0d0;
+    --color-text-muted: rgba(208, 208, 208, 0.65);
+    --color-heading: #00e5ff;
+    --color-accent: #00e5ff;
+    --color-highlight: #ff3d00;
+    --color-nav: #00e5ff;
+    --color-border: rgba(0, 229, 255, 0.15);
+    --color-accent-glow: rgba(0, 229, 255, 0.4);
+
+    /* Typography */
+    --font-body: 'Consolas', 'Courier New', monospace;
+    --font-heading: 'Segoe UI', Arial, sans-serif;
+    --line-height: 1.65;
+
+    /* Layout */
+    --content-width: 1100px;
+    --nav-align: flex-start;
+    --nav-transform: uppercase;
+
+    /* Components */
+    --book-border: 1px solid rgba(0, 229, 255, 0.5);
+    --book-radius: 2px;
+    --book-shadow: 0 0 20px rgba(0, 229, 255, 0.15), 0 4px 20px rgba(0, 0, 0, 0.6);
+    --book-hover-shadow: 0 0 30px rgba(0, 229, 255, 0.4), 0 8px 30px rgba(0, 0, 0, 0.5);
+    --button-radius: 0;
+}

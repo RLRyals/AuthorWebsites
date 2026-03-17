@@ -1,0 +1,50 @@
+---
+layout: layout.njk
+pageTitle: " - home"
+eleventyNavigation:
+  key: Home
+  order: 0
+---
+
+{% set mainBook = books[0] %}
+{% set hp = author.homepage %}
+<div class="container">
+  <div class="text-section">
+    <h2>{{ hp.heading }}</h2>
+    {% if mainBook %}
+      <h1>{{ mainBook.series }}</h1>
+    {% endif %}
+    <p><em>{{ hp.tagline }}</em></p>
+    <p>{{ hp.description }}</p>
+    <p>
+      {% if mainBook %}
+        <a href="{{ mainBook.link }}" class="btn btn-primary">{{ hp.ctaText }}</a>
+      {% endif %}
+      {% if hp.ctaSecondary %}
+        <a href="{{ hp.ctaSecondaryLink }}" class="btn btn-outline">{{ hp.ctaSecondary }}</a>
+      {% endif %}
+    </p>
+  </div>
+
+  {% if mainBook %}
+  <div class="book-image">
+    <a href="{{ mainBook.link }}">
+      <img src="{{ mainBook.image }}" alt="{{ mainBook.name }} Book Cover">
+    </a>
+  </div>
+  {% endif %}
+</div>
+
+<div class="intro text-section">
+  <h2>{{ hp.seriesName }}</h2>
+  <p>{{ hp.seriesBlurb | safe }}</p>
+</div>
+
+<div class="text-section">
+  <h2>From the Blog</h2>
+  <ul>
+  {% for post in collections.blog %}
+    <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>
