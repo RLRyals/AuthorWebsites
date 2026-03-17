@@ -42,8 +42,8 @@ if [ ! -f "$EXAMPLE_FILE" ]; then
     exit 0
 fi
 
-# Pull slugs from outputFolder lines like: outputFolder: "_site_rodthunderen"
-SAFE_SLUGS=$(grep 'outputFolder:' "$EXAMPLE_FILE" | sed 's/.*_site_//; s/[",]//g; s/[[:space:]]//g')
+# Pull slugs from outputFolder lines like: outputFolder: "_site_rodthunderen", // comment
+SAFE_SLUGS=$(grep 'outputFolder:' "$EXAMPLE_FILE" | sed 's|.*_site_||; s|["/,].*||; s|[[:space:]]||g')
 
 # Pen-name-specific path patterns to check
 STAGED=$(git diff --cached --name-only)
