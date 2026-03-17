@@ -2,7 +2,7 @@
 description: Validate all configuration files and dependencies
 ---
 
-Perform a comprehensive validation of the AuthorWebsite configuration:
+Perform a comprehensive validation of the AuthorWebsites configuration:
 
 1. **profiles.js validation**:
    - Check syntax is valid JavaScript

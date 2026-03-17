@@ -1,6 +1,6 @@
 {
   "projectContext": {
-    "name": "AuthorWebsite - Multi-Tenant Static Site Generator",
+    "name": "AuthorWebsites - Multi-Tenant Static Site Generator",
     "description": "Eleventy-based static site generator for fiction authors with multiple pen names. Supports unlimited author identities from a single codebase with Decap CMS for content management.",
     "architecture": {
       "generator": "Eleventy 11ty v3.0",

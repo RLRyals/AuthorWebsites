@@ -1,6 +1,6 @@
 # Claude Agent Configuration
 
-This directory contains configuration, hooks, and commands to improve the onboarding experience for Claude agents working on the AuthorWebsite project.
+This directory contains configuration, hooks, and commands to improve the onboarding experience for Claude agents working on the AuthorWebsites project.
 
 ## Structure
 

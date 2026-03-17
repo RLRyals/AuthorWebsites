@@ -31,7 +31,7 @@ Welcome! This guide will help you manage your author websites without needing to
 
 3. **Navigate to your project folder**
    ```bash
-   cd path/to/AuthorWebsite
+   cd path/to/AuthorWebsites
    ```
 
 4. **Install dependencies** (one-time only)
@@ -600,7 +600,7 @@ If you encounter issues not covered in this guide:
 Understanding where your content lives:
 
 ```
-AuthorWebsite/
+AuthorWebsites/
 ├── src/
 │   ├── _data/
 │   │   ├── profiles.js              # Your pen names & theme assignments

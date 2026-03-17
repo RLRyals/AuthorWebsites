@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# SessionStart Hook for AuthorWebsite
+# SessionStart Hook for AuthorWebsites
 # This hook runs when an agent starts a new session
 # It validates the environment and provides helpful context
 
-echo "🚀 AuthorWebsite - Agent Onboarding"
+echo "🚀 AuthorWebsites - Agent Onboarding"
 echo "=================================="
 echo ""
 

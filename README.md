@@ -22,8 +22,8 @@ A static site generator for fiction authors managing multiple pen names. Built w
 ### Install
 
 ```bash
-git clone https://github.com/RLRyals/AuthorWebsite.git
-cd AuthorWebsite
+git clone https://github.com/RLRyals/AuthorWebsitess.git
+cd AuthorWebsitess
 npm install
 ```
 
@@ -106,7 +106,7 @@ The active pen name is controlled by the `ELEVENTY_PEN_NAME` environment variabl
 ### Directory Structure
 
 ```
-AuthorWebsite/
+AuthorWebsites/
 ├── src/
 │   ├── _data/               # Data files
 │   │   ├── profiles.js      # Pen name configurations
