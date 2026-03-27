@@ -9,52 +9,7 @@
   <body class="layout-{{ author.siteLayout or 'topnav' }}">
     <a href="#skip" class="visually-hidden">Skip to main content</a>
 
-    {% if author.siteLayout == "sidebar" %}
-    {# ========== SIDEBAR LAYOUT ========== #}
-    <div class="site-layout">
-      <aside class="sidebar{% if author.sidebarImage %} has-bg-image{% endif %}">
-        <div class="sidebar-brand">
-          <a href="/">{{ author.penName }}</a>
-        </div>
-        <nav>
-          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
-        </nav>
-        <div class="sidebar-footer">
-          <div class="sidebar-social">
-            {% if author.social.twitter %}<a href="{{ author.social.twitter }}">Twitter</a>{% endif %}
-            {% if author.social.facebook %}<a href="{{ author.social.facebook }}">Facebook</a>{% endif %}
-          </div>
-          <p>&copy; {{ site.now }} {{ author.penName }}</p>
-        </div>
-      </aside>
-      <main id="skip" class="main-content">
-        <heading-anchors>
-          {{ content | safe }}
-        </heading-anchors>
-      </main>
-    </div>
-
-    {% else %}
-    {# ========== TOP NAV LAYOUT ========== #}
-    <div class="site-wrapper">
-      <header class="site-header">
-        <div class="header-brand">
-          <a href="/">{{ author.penName }}</a>
-        </div>
-        <nav>
-          {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
-        </nav>
-      </header>
-      <main id="skip" class="main-content">
-        <heading-anchors>
-          {{ content | safe }}
-        </heading-anchors>
-      </main>
-      <footer>
-        <p>&copy; {{ site.now }} {{ author.penName }}</p>
-      </footer>
-    </div>
-    {% endif %}
+    {% include "layouts/partials/" + (author.siteLayout or "topnav") + ".njk" %}
 
   </body>
 </html>

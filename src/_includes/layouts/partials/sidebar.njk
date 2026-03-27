@@ -1,0 +1,23 @@
+{# ========== SIDEBAR LAYOUT ========== #}
+<div class="site-layout">
+  <aside class="sidebar{% if author.sidebarImage %} has-bg-image{% endif %}">
+    <div class="sidebar-brand">
+      <a href="/">{{ author.penName }}</a>
+    </div>
+    <nav>
+      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+    </nav>
+    <div class="sidebar-footer">
+      <div class="sidebar-social">
+        {% if author.social.twitter %}<a href="{{ author.social.twitter }}">Twitter</a>{% endif %}
+        {% if author.social.facebook %}<a href="{{ author.social.facebook }}">Facebook</a>{% endif %}
+      </div>
+      <p>&copy; {{ site.now }} {{ author.penName }}</p>
+    </div>
+  </aside>
+  <main id="skip" class="main-content">
+    <heading-anchors>
+      {{ content | safe }}
+    </heading-anchors>
+  </main>
+</div>

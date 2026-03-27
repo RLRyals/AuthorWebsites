@@ -1,0 +1,465 @@
+/* ==========================================================================
+   Theme: Urban Fantasy Neon
+   Best for: Urban Fantasy, Dark Fantasy, Paranormal
+   ========================================================================== */
+:root {
+    /* Colors */
+    --color-bg: #0a100a;
+    --color-text: #e8e8e8;
+    --color-text-muted: rgba(138, 154, 138, 0.85);
+    --color-heading: #ffffff;
+    --color-accent: #7bed7b;
+    --color-highlight: #5fd35f;
+    --color-nav: #d0d0d0;
+    --color-border: rgba(123, 237, 123, 0.15);
+    --color-accent-glow: rgba(123, 237, 123, 0.4);
+
+    /* Typography — Serif headings + sans body */
+    --font-body: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --font-heading: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+    --line-height: 1.7;
+
+    /* Layout */
+    --content-width: 1100px;
+    --nav-align: center;
+    --nav-transform: none;
+
+    /* Components */
+    --book-border: none;
+    --book-radius: 10px;
+    --book-shadow: 0 16px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(123, 237, 123, 0.05);
+    --book-hover-shadow: 0 24px 64px rgba(123, 237, 123, 0.15), 0 0 0 1px rgba(123, 237, 123, 0.12);
+    --button-radius: 6px;
+}
+
+/* ==========================================================================
+   GOOGLE FONTS — Playfair Display for headings
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   BACKGROUND — dark with subtle radial green glow
+   ========================================================================== */
+body {
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 100%, rgba(123, 237, 123, 0.03) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 80% 20%, rgba(123, 237, 123, 0.02) 0%, transparent 50%),
+        var(--color-bg);
+}
+
+/* ==========================================================================
+   SPLIT HEADER — Centered brand with nav below
+   ========================================================================== */
+.layout-urban-fantasy-neon .split-header {
+    text-align: center;
+    padding: 2rem 2rem 0;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+}
+
+.layout-urban-fantasy-neon .header-brand-center {
+    margin-bottom: 0.5rem;
+}
+
+.layout-urban-fantasy-neon .header-brand-center a {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--color-heading);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: text-shadow 0.3s ease;
+}
+
+.layout-urban-fantasy-neon .header-brand-center a:hover {
+    text-shadow: 0 0 30px var(--color-accent-glow);
+    color: var(--color-heading);
+}
+
+.layout-urban-fantasy-neon .split-header nav {
+    display: flex;
+    justify-content: center;
+}
+
+.layout-urban-fantasy-neon .split-header .nav-menu {
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    margin: 0;
+}
+
+.layout-urban-fantasy-neon .split-header .nav-link {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    color: var(--color-nav);
+    padding: 0.5rem 1.25rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.25s ease, border-color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.layout-urban-fantasy-neon .split-header .nav-link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+    text-shadow: 0 0 12px rgba(123, 237, 123, 0.3);
+}
+
+.layout-urban-fantasy-neon .split-header .nav-active .nav-link,
+.layout-urban-fantasy-neon .split-header li.nav-active .nav-link,
+.layout-urban-fantasy-neon .split-header li.nav-active a {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+.layout-urban-fantasy-neon .main-content {
+    padding: 2rem 3rem;
+    background:
+        radial-gradient(ellipse 50% 40% at 70% 0%, rgba(123, 237, 123, 0.03) 0%, transparent 60%),
+        transparent;
+}
+
+/* Subtle grain texture overlay */
+.layout-urban-fantasy-neon .main-content::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.02'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+.layout-urban-fantasy-neon .main-content > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    color: var(--color-heading);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    color: var(--color-heading);
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+/* ==========================================================================
+   HERO / HOME CONTAINER
+   ========================================================================== */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0;
+    gap: 3rem;
+}
+
+@media (min-width: 900px) {
+    .container {
+        flex-direction: row;
+        text-align: left;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .text-section {
+        flex: 1;
+    }
+
+    .book-image {
+        flex: 0 0 auto;
+        max-width: 340px;
+    }
+}
+
+/* Series label styling */
+.text-section p:first-of-type {
+    font-style: italic;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* Hero heading — neon green gradient */
+.text-section h2 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    font-style: italic;
+    background: linear-gradient(180deg, #c8ffc8 0%, #7bed7b 40%, #4db84d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+/* Tagline */
+.text-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
+
+/* ==========================================================================
+   BOOK COVERS — glow + lift on hover
+   ========================================================================== */
+.book-image {
+    position: relative;
+}
+
+.book-image img {
+    border: none;
+    border-radius: var(--book-radius);
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.2, 1),
+                box-shadow 0.5s cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+.book-image a:hover img {
+    transform: translateY(-8px) scale(1.02);
+}
+
+/* Ambient neon glow behind covers */
+.book-image::before {
+    content: '';
+    position: absolute;
+    inset: 15% 10%;
+    background: radial-gradient(ellipse, rgba(123, 237, 123, 0.15) 0%, transparent 70%);
+    filter: blur(40px);
+    z-index: -1;
+    transition: opacity 0.5s ease;
+    opacity: 0.5;
+}
+
+.book-image:hover::before {
+    opacity: 1;
+}
+
+/* CTA Button — neon green */
+.book-image::after {
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    padding: 0.9rem 2.5rem;
+    border-radius: var(--button-radius);
+    background-color: var(--color-accent);
+    color: #0a100a;
+    box-shadow: 0 4px 20px rgba(123, 237, 123, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-image:hover::after {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(123, 237, 123, 0.35);
+    background-color: var(--color-highlight);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn,
+a.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border-radius: var(--button-radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary,
+a.btn-primary {
+    background: var(--color-accent);
+    color: #0a100a;
+    box-shadow: 0 4px 16px rgba(123, 237, 123, 0.2);
+}
+
+.btn-primary:hover,
+a.btn-primary:hover {
+    background: var(--color-highlight);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(123, 237, 123, 0.35);
+    color: #0a100a;
+}
+
+.btn-outline,
+a.btn-outline {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+}
+
+.btn-outline:hover,
+a.btn-outline:hover {
+    background: rgba(123, 237, 123, 0.1);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   INTRO SECTION
+   ========================================================================== */
+.intro {
+    max-width: 600px;
+    margin: 3rem 0;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+}
+
+.intro p {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   BLOG LIST — subtle hover cards
+   ========================================================================== */
+.blog-list li,
+main ul li {
+    margin-bottom: 0.25rem;
+}
+
+.blog-list a,
+main ul a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.blog-list a:hover,
+main ul a:hover {
+    background: rgba(123, 237, 123, 0.06);
+    color: var(--color-accent);
+}
+
+/* ==========================================================================
+   BOOK PAGE headings
+   ========================================================================== */
+main > h2 {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.75rem;
+}
+
+/* Books page covers */
+main img[alt*="Cover"] {
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+main img[alt*="Cover"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(123, 237, 123, 0.12);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    border-top-color: var(--color-border);
+}
+
+footer p {
+    color: rgba(138, 154, 138, 0.4);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   LINKS
+   ========================================================================== */
+a {
+    transition: color 0.25s ease;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .layout-urban-fantasy-neon .split-header {
+        padding: 1.25rem 1rem 0;
+    }
+
+    .layout-urban-fantasy-neon .header-brand-center a {
+        font-size: 1.8rem;
+    }
+
+    .layout-urban-fantasy-neon .split-header .nav-link {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.82rem;
+    }
+
+    .layout-urban-fantasy-neon .main-content {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .text-section h2 {
+        font-size: 2.2rem !important;
+    }
+
+    .container {
+        gap: 2rem;
+    }
+}
+
+/* ==========================================================================
+   SCROLLBAR
+   ========================================================================== */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(123, 237, 123, 0.12);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(123, 237, 123, 0.25);
+}
+
+html {
+    scrollbar-color: rgba(123, 237, 123, 0.12) var(--color-bg);
+    scrollbar-width: thin;
+}
+
+/* ==========================================================================
+   SELECTION
+   ========================================================================== */
+::selection {
+    background: rgba(123, 237, 123, 0.25);
+    color: #ffffff;
+}

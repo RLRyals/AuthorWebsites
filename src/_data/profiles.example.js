@@ -41,6 +41,7 @@ module.exports = {
                 seriesName: "The Neon Rites Series",
                 seriesBlurb: "Detective Kael Voss walks the line between two worlds — the city's gleaming tech-driven surface and the occult network humming beneath it. When his mother is found dead inside a ward no living mage should know, Kael is dragged into a conspiracy that spans centuries.\n\nThree books. One mystery. A city that refuses to stay dead.",
                 ctaText: "Read Book One",
+                ctaPrimaryLink: "",          // URL for primary CTA (falls back to first book's link)
                 ctaSecondary: "Listen to Podcast",
                 ctaSecondaryLink: "#podcast"
             },
@@ -79,6 +80,7 @@ module.exports = {
                 seriesName: "The Maple Lane Mysteries",
                 seriesBlurb: "When retired librarian Dotty Marsh moves to the sleepy village of Maple Lane, she expects quiet mornings and garden club meetings. Instead, she finds a body in the bookshop and a town full of people with something to hide.\n\nThree books. One nosy librarian. A village that's anything but peaceful.",
                 ctaText: "Read Book One",
+                ctaPrimaryLink: "",          // URL for primary CTA (falls back to first book's link)
                 ctaSecondary: "Join the Book Club",
                 ctaSecondaryLink: "/newsletter/"
             },
@@ -118,6 +120,7 @@ module.exports = {
                 seriesName: "The Fractured Horizon Series",
                 seriesBlurb: "In 2087, Earth's governments have collapsed under the weight of climate debt and corporate buyouts. Mira Chen is a memory auditor — paid to verify that citizens' implanted recollections match the corporate record. When she finds a memory that shouldn't exist, she becomes the most wanted person on the planet.\n\nThree books. One impossible memory. A world built on convenient lies.",
                 ctaText: "Read Book One",
+                ctaPrimaryLink: "",          // URL for primary CTA (falls back to first book's link)
                 ctaSecondary: "Read the Blog",
                 ctaSecondaryLink: "/blog/"
             },
