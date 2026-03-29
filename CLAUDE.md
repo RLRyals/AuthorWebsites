@@ -80,6 +80,7 @@ All layouts collapse to single-column on mobile.
 |-------|---------|
 | `/add-penname` | Scaffold a new pen name with all files |
 | `/create-theme` | Generate layout + theme from image or spec |
+| `/set-theme` | Change an existing pen name's theme and/or layout |
 | `/build-dev` | Build current pen name with validation |
 | `/build-all` | Build all sites with progress tracking |
 | `/validate-config` | Validate all configs and dependencies |

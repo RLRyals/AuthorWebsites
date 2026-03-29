@@ -105,7 +105,17 @@ To edit a pen name's profile (bio, email, social media, etc.), open `src/_data/p
 
 ### Setting the Active Pen Name
 
-The active pen name determines which site builds when you run `npm start`. To change it, edit the `currentProfile` value at the top of `src/_data/profiles.js`, then restart `npm start`.
+The active pen name determines which site builds. Pass the pen name when starting the dev server:
+
+```bash
+npm start -- "Pen Name"
+```
+
+If no pen name is provided, the first profile in `profiles.js` is used. For production builds, use:
+
+```bash
+npm run build:all
+```
 
 ---
 
@@ -470,7 +480,31 @@ You can override any of these in your author CSS file:
 
 ### Creating a New Theme
 
-To add a completely new theme:
+The easiest way to create a new theme is with the Claude Code command:
+
+```
+/create-theme
+```
+
+This will walk you through a few questions and automatically:
+- Generate a complete color palette and font pairing based on your genre
+- Create the theme CSS file with all required variables
+- Optionally create a custom layout (beyond the built-in `topnav` and `sidebar`)
+- Validate the theme registers correctly
+
+**What you'll be asked:**
+1. **Theme name** — a short label like `dark-romance` or `cozy-fantasy`
+2. **Visual reference** — a screenshot, color palette (hex codes), or written description of the look you want
+3. **Genre** — helps pick appropriate fonts and mood
+4. **Layout** — use an existing layout (`topnav` or `sidebar`) or create a custom one
+
+After the theme is created, connect it to a pen name:
+- **Existing pen name** — run `/set-theme` to switch the theme and/or layout
+- **New pen name** — run `/add-penname` and select the theme during setup
+
+#### Creating a Theme Manually
+
+You can also create a theme by hand:
 
 1. Create a folder: `src/themes/your-theme-name/`
 2. Create `src/themes/your-theme-name/theme.css` with `:root` variable definitions

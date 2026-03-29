@@ -1,0 +1,45 @@
+{# ========== MIDNIGHT GOLD LAYOUT — Centered Logo + Split Nav ========== #}
+{% set navItems = collections.all | eleventyNavigation %}
+<div class="site-wrapper midnight-wrapper">
+  <header class="split-header">
+    <nav class="nav-left" aria-label="Primary navigation (left)">
+      <ul class="nav-menu">
+        {% for item in navItems %}
+          {% if item.order <= 3 %}
+            <li class="nav-item{% if item.url == page.url %} nav-active{% endif %}">
+              <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-brand-center">
+      <a href="/">
+        {% if author.logo %}
+          <img src="{{ author.logo }}" alt="{{ author.penName }}" class="brand-logo">
+        {% else %}
+          {{ author.penName }}
+        {% endif %}
+      </a>
+    </div>
+    <nav class="nav-right" aria-label="Primary navigation (right)">
+      <ul class="nav-menu">
+        {% for item in navItems %}
+          {% if item.order > 3 %}
+            <li class="nav-item{% if item.url == page.url %} nav-active{% endif %}">
+              <a href="{{ item.url }}" class="nav-link">{{ item.title }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+  <main id="skip" class="main-content">
+    <heading-anchors>
+      {{ content | safe }}
+    </heading-anchors>
+  </main>
+  <footer>
+    <p>&copy; {{ site.now }} {{ author.penName }}</p>
+  </footer>
+</div>

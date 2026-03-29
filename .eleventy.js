@@ -89,8 +89,20 @@ module.exports = function (eleventyConfig) {
         fs.writeFileSync(path.join(outputDir, 'theme.css'), combined);
     });
 
-    // Copy the images folder to the output directory
-    eleventyConfig.addPassthroughCopy("src/images");
+    // Copy only the current pen name's images (subfolder + referenced files)
+    const penSlug = currentPenName.toLowerCase().replace(/\s+/g, '');
+    const penImageDir = path.join(__dirname, 'src/images', penSlug);
+    if (fs.existsSync(penImageDir)) {
+        eleventyConfig.addPassthroughCopy(`src/images/${penSlug}`);
+    }
+    if (activeProfile.background) {
+        const bgFile = path.basename(activeProfile.background);
+        eleventyConfig.addPassthroughCopy({ [`src/images/${bgFile}`]: `images/${bgFile}` });
+    }
+    if (activeProfile.sidebarImage) {
+        const sidebarFile = activeProfile.sidebarImage;
+        eleventyConfig.addPassthroughCopy({ [`src${sidebarFile}`]: sidebarFile.slice(1) });
+    }
 
     // Include admin folder only for local development (npm start)
     // Deployed sites should NOT include the admin folder
