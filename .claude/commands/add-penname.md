@@ -26,8 +26,8 @@ Ask these in two rounds at most:
 **Round 1** (4 questions max):
 - Pen name (free text)
 - Genre(s) — multi-select: Romance, Fantasy, Thriller/Suspense, Sci-Fi (allow "Other")
-- Site layout — single-select: "Top Navigation" or "Sidebar"
-- Theme — single-select from available themes below (allow "Other" for new theme)
+- Site layout — single-select from available layouts in `src/_includes/layouts/partials/` (list `.njk` files). Default options: "Top Navigation" (`topnav`) or "Sidebar" (`sidebar`). Suggest `/create-theme` for custom layouts.
+- Theme — single-select from available themes below (allow "Other" for new theme, or suggest `/create-theme` for full layout + theme from a visual reference)
 
 **Round 2** (3 questions max):
 - Website URL — suggest `[slug].com` and `[slug]books.com`
@@ -83,6 +83,7 @@ Add a new key to the `profiles` object. Exact format:
         seriesName: "[series name]",
         seriesBlurb: "[2-3 sentence series description]",
         ctaText: "Read Book One",
+        ctaPrimaryLink: "",              // URL for primary CTA — e.g., Amazon link, newsletter, series page (falls back to first book's link if empty)
         ctaSecondary: "[secondary CTA label]",
         ctaSecondaryLink: "[link]"
     },
@@ -90,7 +91,7 @@ Add a new key to the `profiles` object. Exact format:
     theme: "[theme-name]",           // folder name in src/themes/
     styles: "authors/[slug].css",    // relative to src/css/
     background: "/images/[slug]-bg.jpg",
-    siteLayout: "topnav",            // or "sidebar"
+    siteLayout: "topnav",            // matches partial in src/_includes/layouts/partials/ ("topnav", "sidebar", or custom)
     blogFolder: "blogs/[slug]",
     bookList: "[slug]_books.json"
 }

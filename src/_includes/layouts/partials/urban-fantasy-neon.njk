@@ -1,0 +1,19 @@
+{# ========== URBAN FANTASY NEON LAYOUT — Centered Brand + Split Nav ========== #}
+<div class="site-wrapper neon-wrapper">
+  <header class="split-header">
+    <div class="header-brand-center">
+      <a href="/">{{ author.penName }}</a>
+    </div>
+    <nav>
+      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+    </nav>
+  </header>
+  <main id="skip" class="main-content">
+    <heading-anchors>
+      {{ content | safe }}
+    </heading-anchors>
+  </main>
+  <footer>
+    <p>&copy; {{ site.now }} {{ author.penName }}</p>
+  </footer>
+</div>

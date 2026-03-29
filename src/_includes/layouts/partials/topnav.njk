@@ -1,0 +1,19 @@
+{# ========== TOP NAV LAYOUT ========== #}
+<div class="site-wrapper">
+  <header class="site-header">
+    <div class="header-brand">
+      <a href="/">{{ author.penName }}</a>
+    </div>
+    <nav>
+      {{ collections.all | eleventyNavigation | eleventyNavigationToHtml(navigationOptions) | safe }}
+    </nav>
+  </header>
+  <main id="skip" class="main-content">
+    <heading-anchors>
+      {{ content | safe }}
+    </heading-anchors>
+  </main>
+  <footer>
+    <p>&copy; {{ site.now }} {{ author.penName }}</p>
+  </footer>
+</div>

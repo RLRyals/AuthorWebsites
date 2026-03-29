@@ -17,8 +17,9 @@ eleventyNavigation:
     <p><em>{{ hp.tagline }}</em></p>
     <p>{{ hp.description }}</p>
     <p>
-      {% if mainBook %}
-        <a href="{{ mainBook.link }}" class="btn btn-primary">{{ hp.ctaText }}</a>
+      {% set ctaLink = hp.ctaPrimaryLink or (mainBook and mainBook.link) %}
+      {% if ctaLink %}
+        <a href="{{ ctaLink }}" class="btn btn-primary">{{ hp.ctaText }}</a>
       {% endif %}
       {% if hp.ctaSecondary %}
         <a href="{{ hp.ctaSecondaryLink }}" class="btn btn-outline">{{ hp.ctaSecondary }}</a>
